@@ -9,15 +9,15 @@ html {
 }
 
 :root {
-    --orange-gradient: linear-gradient(90deg, #FFD700, #FFA500, #FF8C00);
+    --orange-gradient: linear-gradient(80deg, #FFD700, #FFA500, #FF8C00);
     --font-family: ui-sans-serif, 'Segoe UI', 'Helvetica Neue', Roboto, --apple-system, Arial, sans-serif;
     --orange-start: #FFD700;
     --orange-mid: #FFA500;
     --orange-end: #FF8C00;
     --dark-gray: #1a1a1a;
-    --light-gray: #aaa;
+    --light-gray: #999;
     --lightest-gray: #ededed;
-    --text-color: #b0b0b0;
+    --text-color: #c0c0c0;
     --section-padding: 4rem 2rem;
     --background-color: #ededed;
 }
@@ -201,7 +201,7 @@ nav ul li a:hover::after {
 }
 
 .project-card em {
-    color: var(--orange-mid);
+    color: var(--orange-end);
     font-style: normal;
 }
 
@@ -261,6 +261,12 @@ nav ul li a:hover::after {
     padding: 1.5rem;
     border-radius: 2px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ethos-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
 .ethos-icon {
@@ -281,10 +287,10 @@ nav ul li a:hover::after {
 }
 
 .social-links {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .social-link {
@@ -293,7 +299,7 @@ nav ul li a:hover::after {
     text-decoration: none;
     color: var(--dark-gray);
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.2rem 0.5rem;
     border: 1px solid var(--dark-gray);
     border-radius: 5px;
     transition: color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
@@ -357,4 +363,25 @@ section {
 #hero {
     padding-top: 0;
     margin-top: 0;
+}
+
+.skinny {
+    font-weight: 800;
+    display: inline-block;
+    background-image: var(--orange-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% 100%;
+    position: relative;
+    animation: shimmer-ltr 2.5s linear 0s infinite alternate, shimmer-rtl 2.5s linear 2.5s infinite alternate;
+}
+
+@keyframes shimmer-ltr {
+    0% { background-position: 0% 75%; }
+    100% { background-position: 100% 75%; }
+}
+@keyframes shimmer-rtl {
+    0% { background-position: 100% 75%; }
+    100% { background-position: 0% 75%; }
 }
